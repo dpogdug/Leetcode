@@ -2,9 +2,15 @@ class Solution {
     public String longestCommonPrefix(String[] strs) {
         
         String longestCommonPrefix = "";
+
+        if(strs.length==1){
+                return strs[0];
+        }
         
         for (int i=0; i<strs.length-1; i++){
+            
             String currentLongest = "";
+            
             int minLength = Math.min(strs[i].length(),strs[i+1].length());
 
             for (int j=0; j < minLength;j++){
@@ -18,6 +24,7 @@ class Solution {
                 if(i==0){
                     longestCommonPrefix = currentLongest;
                 }
+
                 else if (currentLongest.length() < longestCommonPrefix.length()){
                     longestCommonPrefix = currentLongest;
                 }
